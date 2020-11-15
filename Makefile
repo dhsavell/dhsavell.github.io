@@ -53,7 +53,8 @@ dictionary.txt:
 		-p frontmatter spell indefinite-article repeated-words syntax-urls \
 		--generate-dictionary
 
-pngopt:
-	find -path './static/**/*.png' -exec $(PNGCRUSH) -ow {} \;
+thumbs:
+	mkdir -p static/thumbs
+	mogrify -format webp -path './static/thumbs/' -thumbnail 320x240 ./static/img/*
 
-.PHONY: all dev clean check check-spelling pngopt
+.PHONY: all dev clean check check-spelling images

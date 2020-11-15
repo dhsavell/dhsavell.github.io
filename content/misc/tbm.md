@@ -1,14 +1,6 @@
 ---
 slug: tbm
 title: Digital Media Apps
-
-gallery:
-    - image: /img/tbm.png
-      alt: Screenshot of The Beat Machine.
-      size: 1023x786
-    - image: /img/vdcrpt.png
-      alt: Screenshot of vdcrpt.
-      size: 452x632
 ---
 Web and desktop apps for messing with audio and video in strange ways. Includes
 "[The Beat Machine](https://beatmachine.branchpanic.me/)" for remixing songs

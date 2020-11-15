@@ -46,7 +46,7 @@
                     data-size="{{ .size }}"
                 >
                     <img
-                        src="{{ .image }}"
+                        src="{{ replace .image "img/" "thumbs/" }}"
                         itemprop="thumbnail"
                         alt="{{ .alt }}"
                     />
@@ -75,7 +75,7 @@
                     data-size="{{ .size }}"
                 >
                     <img
-                        src="{{ .image }}"
+                        src="{{ replace .image "img/" "thumbs/" }}"
                         itemprop="thumbnail"
                         alt="{{ .alt }}"
                     />

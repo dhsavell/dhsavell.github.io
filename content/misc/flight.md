@@ -4,22 +4,22 @@ title: Taking Flight
 weight: 100
 
 gallery:
-    - image: /img/tf01.png
+    - image: /img/tf01.webp
       alt: Frame of robot seeing a butterfly by some rocks.
       size: 1920x1080
-    - image: /img/tf02.png
+    - image: /img/tf02.webp
       alt: Frame of robot following the butterfly to a furnace.
       size: 1920x1080
-    - image: /img/tf03.png
+    - image: /img/tf03.webp
       alt: Frame of robot meeting up with butterfly atop machinery.
       size: 1920x1080
-    - image: /img/tf04.png
+    - image: /img/tf04.webp
       alt: Frame of robot making an attempt to fly (hey, they're trying).
       size: 1920x1080
-    - image: /img/tf05.png
+    - image: /img/tf05.webp
       alt: Frame of robot realizing the consequences of being distracted.
       size: 1920x1080
-    - image: /img/tf06.png
+    - image: /img/tf06.webp
       alt: Frame of robot hard at work once more.
       size: 1920x1080
 ---
