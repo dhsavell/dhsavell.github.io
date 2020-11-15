@@ -1,0 +1,6 @@
+/public/
+/resources/_gen/
+hugo_stats.json
+
+# From Makefile
+dictionary.old.txt
