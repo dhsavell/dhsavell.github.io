@@ -1,36 +1,99 @@
+<!--
+    index.html: index page w/ project listing
+
+    TODO: https://codepen.io/ShopifyPartners/pen/EWoYMp
+-->
 <!DOCTYPE html>
 <html>
-<head>
-    {{ .Hugo.Generator }}
-    {{ partial "cdn.html" . }}
-    <title>{{ .Site.Title }}</title>
-</head>
-<body>
-    <header>
-        {{ .Content }}
-    </header>
-    <section>
-        {{ range (.Pages.GroupBy "Type").Reverse }}
-        <h3>{{ .Key }}</h3>
-        <article class="grid">
-            {{ range .Pages }}
-            {{ if .Params.Images }}
-            <a href="{{ .Permalink }}"><article class="item">
-                <img src="{{ index .Params.Images 0 }}">
-                <h4>{{ .Title }}</h4>
-                <h5>
-                {{ .Params.org }}
-                {{ if .Params.proj }}
-                <br/> {{ .Params.proj }}
-                {{ end }}
-                </h5>
-            </article></a>
-            {{ end }}
-            {{ end }}
-        </article>
-        {{ end }}
-    </section>
-    <footer>
-    </footer>
-</body>
+    <head>
+        {{ .Hugo.Generator }} {{ partial "cdn.html" . }}
+        <title>{{ .Site.Title }} {{ block "titleextra" . }} {{ end }}</title>
+    </head>
+    <body>
+        <a name="top"></a>
+        {{ block "main" . }} {{ end }}
+    </body>
 </html>
+
+{{ define "main" }}
+<header>{{ .Content }}</header>
+<section>
+    {{ range .Pages }}
+    <article>
+        <h1 id="{{ .Slug }}">{{ .Title }}</h1>
+        {{ if .Params.org }}
+        {{ if .Params.orglink }}<a href="{{ .Params.orglink }}">{{end}}
+        <h2>{{ .Params.org }} {{ if .Params.orglink }}&raquo;{{end}}</h2>
+        {{ if .Params.orglink }}</a>{{end}}
+        {{ end }}
+        <p>{{ .Content }}</p>
+
+        {{ if .Params.gallery }}
+        <div
+            class="pswpgallery"
+            itemscope
+            itemtype="http://schema.org/ImageGallery"
+        >
+            {{ range .Params.gallery }}
+            <figure
+                itemprop="associatedMedia"
+                itemscope
+                itemtype="http://schema.org/ImageObject"
+            >
+                <a
+                    href="{{ .image }}"
+                    itemprop="contentUrl"
+                    data-size="{{ .size }}"
+                >
+                    <img
+                        src="{{ .image }}"
+                        itemprop="thumbnail"
+                        alt="{{ .alt }}"
+                    />
+                </a>
+            </figure>
+            {{ end }}
+        </div>
+        {{ end }} {{ $parent := .Slug }} {{ range .Pages }}
+        <h3 id="{{ $parent }}-{{ .Slug }}">{{ .Title }}</h3>
+        <p>{{ .Content }}</p>
+        {{ if .Params.gallery }}
+        <div
+            class="pswpgallery"
+            itemscope
+            itemtype="http://schema.org/ImageGallery"
+        >
+            {{ range .Params.gallery }}
+            <figure
+                itemprop="associatedMedia"
+                itemscope
+                itemtype="http://schema.org/ImageObject"
+            >
+                <a
+                    href="{{ .image }}"
+                    itemprop="contentUrl"
+                    data-size="{{ .size }}"
+                >
+                    <img
+                        src="{{ .image }}"
+                        itemprop="thumbnail"
+                        alt="{{ .alt }}"
+                    />
+                </a>
+            </figure>
+            {{ end }}
+        </div>
+        {{ end }} {{ end }}
+    </article>
+    {{ end }}
+</section>
+<footer>
+    <p>
+        <a href="#top">Back to top</a>.
+    </p>
+</footer>
+
+{{ partial "pswp.html" . }}
+<script src="/pswpgallery.js"></script>
+
+{{ end }}

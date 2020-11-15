@@ -1,0 +1,15 @@
+<!--
+    baseof.html: default base for all pages
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    {{ .Hugo.Generator }}
+    {{ partial "cdn.html" . }}
+    <title>{{ .Site.Title }} {{ block "titleextra" . }} {{ end }}</title>
+</head>
+<body>
+    {{ block "main" . }} {{ end }}
+</body>
+</html>
