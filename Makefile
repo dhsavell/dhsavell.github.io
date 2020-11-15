@@ -53,7 +53,7 @@ dictionary.txt:
 		-p frontmatter spell indefinite-article repeated-words syntax-urls \
 		--generate-dictionary
 
-optim:
-	pngcrush -d static/img
+pngopt:
+	find -path './static/**/*.png' -exec pngcrush -ow {} \;
 
 .PHONY: all dev clean check check-spelling
