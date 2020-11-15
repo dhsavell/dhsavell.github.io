@@ -54,6 +54,6 @@ dictionary.txt:
 		--generate-dictionary
 
 pngopt:
-	find -path './static/**/*.png' -exec pngcrush -ow {} \;
+	find -path './static/**/*.png' -exec $(PNGCRUSH) -ow {} \;
 
-.PHONY: all dev clean check check-spelling
+.PHONY: all dev clean check check-spelling pngopt
