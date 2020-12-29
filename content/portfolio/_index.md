@@ -2,11 +2,7 @@
 
 ## Technical Artist
 
-UMass Amherst, Fall '21<br/>
-Major (BS): Computer Science<br/>
-Minor: Studio Art
-
-My goal is to make tools that let creativity happen. Contact me below, and
+I make tools for creativity (or something like that). Contact me below, and
 keep scrolling for a portfolio of my work. Click or tap on any image to view it
 at full resolution. Thanks for visiting.
 

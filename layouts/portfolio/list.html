@@ -18,7 +18,7 @@
 {{ define "main" }}
 <header>{{ .Content }}</header>
 <section>
-    {{ range .Pages }}
+    {{ range .Data.Pages }}
     <article>
         <h1 id="{{ .Slug }}">{{ .Title }}</h1>
         {{ if .Params.org }}
